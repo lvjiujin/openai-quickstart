@@ -95,6 +95,10 @@ python ai_translator/main.py --model_type OpenAIModel --openai_api_key $env:OPEN
 # add the gradio 
 
 python .\ai_translator\gradio_server.py --model_type OpenAIModel  --openai_model "gpt-4" --openai_api_key  $env:OPENAI_API_KEY   --output_file_format "markdown"
+
+# add the flask
+python .\ai_translator\flask_server.py --model_type OpenAIModel  --openai_model "gpt-4" --openai_api_key  $env:OPENAI_API_KEY   --output_file_format "markdown"
+
 ```
 
 ## 这是使用 GLM 模型的例子：

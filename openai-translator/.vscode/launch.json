@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: main",
+            "name": "Python Debugger: flask_server",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
@@ -14,7 +14,7 @@
             "args": [
                 "--model_type", "OpenAIModel",
                 "--openai_api_key", "$env:OPENAI_API_KEY",
-                "--file_format", "markdown",
+                "--output_file_format", "markdown",
                 "--book", "tests/test.pdf",  
                 "--openai_model", "gpt-4"
             ]
