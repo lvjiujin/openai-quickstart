@@ -25,14 +25,17 @@ class OpenAIModel(Model):
                         ]
                     )
                     translation = response.choices[0].message.content.strip()
-                else:
-                    response = self.client.completions.create(
+                elif self.model == "gpt-4":
+                    
+                    response = self.client.chat.completions.create(
                         model=self.model,
-                        prompt=prompt,
-                        max_tokens=150,
-                        temperature=0
+                        messages=[
+                            {"role": "user", "content": prompt}
+                        ]
+                        
                     )
-                    translation = response.choices[0].text.strip()
+                   
+                    translation = response.choices[0].message.content.strip()
 
                 return translation, True
             except openai.RateLimitError as e:

@@ -3,6 +3,12 @@ import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+# import debugpy
+# debugpy.listen(5678)
+# print("waiting for debug !")
+# debugpy.wait_for_client()
+# print("attached")
+
 from utils import ArgumentParser, ConfigLoader, LOG
 from model import GLMModel, OpenAIModel
 from translator import PDFTranslator
@@ -20,8 +26,8 @@ if __name__ == "__main__":
 
 
     pdf_file_path = args.book if args.book else config['common']['book']
-    file_format = args.file_format if args.file_format else config['common']['file_format']
+    output_file_format = args.output_file_format if args.output_file_format else config['common']['file_format']
 
     # 实例化 PDFTranslator 类，并调用 translate_pdf() 方法
     translator = PDFTranslator(model)
-    translator.translate_pdf(pdf_file_path, file_format)
+    translator.translate_pdf(pdf_file_path, output_file_format)

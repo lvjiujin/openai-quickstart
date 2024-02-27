@@ -87,10 +87,17 @@ python ai_translator/main.py
 ```bash
 # 将您的 api_key 设置为环境变量
 export OPENAI_API_KEY="sk-xxx"
-python ai_translator/main.py --model_type OpenAIModel --openai_api_key $OPENAI_API_KEY --file_format markdown --book tests/test.pdf --openai_model gpt-3.5-turbo
+python ai_translator/main.py --model_type OpenAIModel --openai_api_key $OPENAI_API_KEY --output_file_format markdown --book tests/test.pdf --openai_model gpt-3.5-turbo
+
+# windows:
+python ai_translator/main.py --model_type OpenAIModel --openai_api_key $env:OPENAI_API_KEY --output_file_format markdown --book tests/test.pdf --openai_model gpt-4
+
+# add the gradio 
+
+python .\ai_translator\gradio_server.py --model_type OpenAIModel  --openai_model "gpt-4" --openai_api_key  $env:OPENAI_API_KEY   --output_file_format "markdown"
 ```
 
-这是使用 GLM 模型的例子：
+## 这是使用 GLM 模型的例子：
 
 ```bash
 # 将您的 GLM 模型 URL 设置为环境变量

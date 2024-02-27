@@ -74,6 +74,13 @@ python ai_translator/main.py
 
 ![sample_out](images/sample_image_1.png)
 
+#####  增加图形界面的启动命令
+```
+
+```
+
+
+
 #### 使用命令行参数
 
 您也可以直接在命令行上指定设置。这是使用 OpenAI 模型的例子：
