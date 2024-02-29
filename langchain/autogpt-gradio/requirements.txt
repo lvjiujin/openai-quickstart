@@ -1,0 +1,11 @@
+simplejson
+requests
+PyYAML
+loguru
+openai
+langchain
+langchain_openai
+langchain-community
+langchain_experimental
+faiss-cpu
+gradio
